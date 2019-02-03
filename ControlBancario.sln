@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlBancario", "ControlBancario\ControlBancario.csproj", "{C4AE3DDE-DB46-4305-AAAE-6B53F55B1261}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{69998787-AF1E-4016-8433-281149533870}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C4AE3DDE-DB46-4305-AAAE-6B53F55B1261}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4AE3DDE-DB46-4305-AAAE-6B53F55B1261}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4AE3DDE-DB46-4305-AAAE-6B53F55B1261}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69998787-AF1E-4016-8433-281149533870}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69998787-AF1E-4016-8433-281149533870}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69998787-AF1E-4016-8433-281149533870}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69998787-AF1E-4016-8433-281149533870}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
