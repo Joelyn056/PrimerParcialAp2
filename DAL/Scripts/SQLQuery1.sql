@@ -1,24 +1,28 @@
-create database PrimerParcialAP2
+CREATE DATABASE PrimerParcialAp2Db
 go
-use PrimerParcialAP2
+Use PrimerParcialAp2Db
 go
 
-create table Cuentas(
-CuentaId int identity primary  key not null,
-Fecha date,
-Nombre varchar(20),
-Balance money
+create table Cuentas 
+(
+	CuentaId int primary key identity(1,1),
+	Fecha Date,
+	Nombre varchar(50),
+	Balance money
 );
 
 go
+create table Depositos
+(
+	DepositoId int primary key identity(1,1),
+	Fecha Date,
+	Nombre varchar(30),
+	CuentaId int references Cuentas(CuentaId),
+	Concepto varchar(50),
+	Monto money
 
-create table Depositos(
-DepositoId int identity primary key not null,
-Fecha date,
-CuentaId int not null,
-Concepto varchar(max),
-Monto money
 );
 
-select * from Cuentas
-select * from Depositos
+
+select * from Cuentas;
+select * from Depositos;
