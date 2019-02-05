@@ -29,7 +29,7 @@ namespace BLL
         public override bool Modificar(Depositos entity)
         {
             var antdeposito = _contexto.Deposito.Include(x => x.Cuenta)
-                                .Where(z => z.DepositosId == entity.DepositosId)
+                                .Where(z => z.DepositoId == entity.DepositoId)
                                 .AsNoTracking()
                                 .FirstOrDefault();
 
@@ -59,7 +59,7 @@ namespace BLL
         public override Depositos Buscar(int id)
         {
             var d = _contexto.Deposito.Include(x => x.Cuenta)
-                    .Where(z => z.DepositosId == id)
+                    .Where(z => z.DepositoId == id)
                     .FirstOrDefault();
             return base.Buscar(id);
         }

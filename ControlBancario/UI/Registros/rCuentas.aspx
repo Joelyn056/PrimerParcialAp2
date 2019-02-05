@@ -61,15 +61,15 @@
         </div>
 
         <div class="card-footer">
-            <!--B0tones-->
+            <!--Botones-->
             <div class="form-group">
-                <div class="col-lg-2 mr-3"">
+                <div class="col-lg-1 mr-1"">
                     <asp:LinkButton ID="NuevoLinkButton" CssClass="btn btn-primary" runat="server" CausesValidation="False" OnClick="NuevoLinkButton_Click">
                         <span class="fas fa-plus"></span>
                         Nuevo
                     </asp:LinkButton>
                 </div>
-                <div class="text-center">
+                <div class="col-lg-1 mr-3">
                     <asp:LinkButton ID="GuardarLinkButton" CssClass="btn btn-primary" runat="server" OnClick="GuardarLinkButton_Click" >
                         <span class="fas fa-save"></span>
                         Guardar
