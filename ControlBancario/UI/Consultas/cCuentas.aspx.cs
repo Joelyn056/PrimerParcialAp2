@@ -32,7 +32,7 @@ namespace ControlBancario.UI.Consultas
 
                 case 1: ///CuentaId
                     dato = ToInt(BuscarTextBox.Text);
-                    filter = (x => x.CuentasId == dato);
+                    filter = (x => x.CuentaId == dato);
                     break;
 
                 case 2: //Fecha
@@ -49,6 +49,14 @@ namespace ControlBancario.UI.Consultas
                     break;
 
             }
+        }
+        //
+        protected void CuentaGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            Repositorio<Cuentas> rep = new Repositorio<Cuentas>();
+            CuentaGridView.DataSource = rep.GetList(filter);
+            CuentaGridView.PageIndex = e.NewPageIndex;
+            CuentaGridView.DataBind();
         }
 
         protected void BuscarLinkButton_Click(object sender, EventArgs e)

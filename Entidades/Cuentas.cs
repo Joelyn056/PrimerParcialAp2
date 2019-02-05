@@ -10,23 +10,23 @@ namespace Entidades
     public class Cuentas
     {
         [Key]
-        public int CuentasId { get; set; }
+        public int CuentaId { get; set; }
         public DateTime Fecha { get; set; }
         public string Nombre { get; set; }
         public decimal Balance { get; set; }
 
         public Cuentas()
         {
-            CuentasId = 0;
+            CuentaId = 0;
             Fecha = DateTime.Now;
             Nombre = string.Empty;
             Balance = 0;
 
         }
 
-        public Cuentas(int cuentasId, DateTime fecha, string nombre, decimal balance)
+        public Cuentas(int id, DateTime fecha, string nombre, decimal balance)
         {
-            CuentasId = cuentasId;
+            CuentaId = id;
             Fecha = fecha;
             Nombre = nombre;
             Balance = balance;

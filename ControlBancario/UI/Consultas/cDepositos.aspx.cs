@@ -62,5 +62,14 @@ namespace ControlBancario.UI.Consultas
             DepositoGridView.DataSource = rep.GetList(filter);
             DepositoGridView.DataBind();
         }
+
+        //
+        protected void DepositoGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            Repositorio<Depositos> rep = new Repositorio<Depositos>();
+            DepositoGridView.DataSource = rep.GetList(filter);
+            DepositoGridView.PageIndex = e.NewPageIndex;
+            DepositoGridView.DataBind();
+        }
     }
 }

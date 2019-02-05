@@ -38,8 +38,9 @@
 
             <!--Grid-->
             <div class="row justify-content-center mt-3">
-                <div class="col-lg-11">           
-                    <asp:GridView ID="CuentaGridView" runat="server" AllowPaging="true" PageSize="7" CssClass="table table-striped table-hover table-responsive-lg" AutoGenerateColumns="False" OnPageIndexChanging="CuentaGridView_PageIndexChanging" OnSelectedIndexChanged="CuentaGridView_SelectedIndexChanged">
+                <div class="col-lg-11"> 
+                      <asp:GridView ID="CuentaGridView" runat="server" class="table table-condensed table-bordered table-responsive" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+                    <%--<asp:GridView ID="CuentaGridView" runat="server" AllowPaging="true" PageSize="7" CssClass="table table-striped table-hover table-responsive-lg" AutoGenerateColumns="False" OnPageIndexChanging="CuentaGridView_PageIndexChanging" OnSelectedIndexChanged="CuentaGridView_SelectedIndexChanged">--%>
                         <Columns>
                             <asp:BoundField DataField="Fecha" HeaderText="Fecha" />
                             <asp:BoundField DataField="Nombre" HeaderText="Nombre" />

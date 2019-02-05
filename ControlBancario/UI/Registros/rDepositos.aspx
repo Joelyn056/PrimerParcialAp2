@@ -89,7 +89,7 @@
                     </asp:LinkButton>
                 </div>
                 <div class="col-lg-1 mr-3">
-                    <asp:LinkButton ID="EliminarLinkButton" CssClass="btn btn-primary" runat="server" CausesValidation="False">
+                    <asp:LinkButton ID="EliminarLinkButton" CssClass="btn btn-primary" runat="server" CausesValidation="False" OnClick="EliminarLinkButton_Click ">
                         <span class="fa fa-trash-alt"></span>
                         Eliminar
                     </asp:LinkButton>
