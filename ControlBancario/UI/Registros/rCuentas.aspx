@@ -58,11 +58,11 @@
             </div>
 
             <!--Card body end-->
+            
         </div>
-
         <div class="card-footer">
             <!--Botones-->
-            <div class="form-group">
+            <div class="form-group row justify-content-center">
                 <div class="col-lg-1 mr-1"">
                     <asp:LinkButton ID="NuevoLinkButton" CssClass="btn btn-success" runat="server" CausesValidation="False" OnClick="NuevoLinkButton_Click">
                         <span class="fas fa-plus"></span>
@@ -85,6 +85,7 @@
 
             <!--Card footer end-->
         </div>
+        
     </div>
      <asp:ValidationSummary ID="ValidationSummary" ShowMessageBox="true" ShowSummary="false" runat="server" />
 </asp:Content>
