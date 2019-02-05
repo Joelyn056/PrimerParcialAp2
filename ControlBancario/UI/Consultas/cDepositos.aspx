@@ -6,7 +6,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="card">
-        <div class="card-header text-center text-white bg-primary">
+        <div class="card-header text-center text-white bg-success">
             <h3>Consulta de depositos</h3>
         </div>
 

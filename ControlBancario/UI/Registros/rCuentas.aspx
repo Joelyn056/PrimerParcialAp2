@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="card">
 
-        <div class="card-header text-center text-white bg-primary">
+        <div class="card-header text-center text-white bg-success">
             <h3>Registro de Cuentas</h3>
         </div>
 
@@ -64,19 +64,19 @@
             <!--Botones-->
             <div class="form-group">
                 <div class="col-lg-1 mr-1"">
-                    <asp:LinkButton ID="NuevoLinkButton" CssClass="btn btn-primary" runat="server" CausesValidation="False" OnClick="NuevoLinkButton_Click">
+                    <asp:LinkButton ID="NuevoLinkButton" CssClass="btn btn-success" runat="server" CausesValidation="False" OnClick="NuevoLinkButton_Click">
                         <span class="fas fa-plus"></span>
                         Nuevo
                     </asp:LinkButton>
                 </div>
                 <div class="col-lg-1 mr-3">
-                    <asp:LinkButton ID="GuardarLinkButton" CssClass="btn btn-primary" runat="server" OnClick="GuardarLinkButton_Click" >
+                    <asp:LinkButton ID="GuardarLinkButton" CssClass="btn btn-success" runat="server" OnClick="GuardarLinkButton_Click" >
                         <span class="fas fa-save"></span>
                         Guardar
                     </asp:LinkButton>
                 </div>
                 <div class="col-lg-1 mr-3">
-                    <asp:LinkButton ID="EliminarLinkButton" CssClass="btn btn-primary" runat="server" CausesValidation="False" OnClick="EliminarLinkButton_Click">
+                    <asp:LinkButton ID="EliminarLinkButton" CssClass="btn btn-success" runat="server" CausesValidation="False" OnClick="EliminarLinkButton_Click">
                         <span class="fa fa-trash-alt"></span>
                         Eliminar
                     </asp:LinkButton>
