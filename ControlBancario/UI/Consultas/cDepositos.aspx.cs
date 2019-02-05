@@ -32,7 +32,7 @@ namespace ControlBancario.UI.Consultas
 
                 case 1://DepositoId
                     dato = ToInt(BuscarTextBox.Text);
-                    filter = (x => x.DepositosId == dato);
+                    filter = (x => x.DepositoId == dato);
                     break;
 
                 case 2://CuentaId
