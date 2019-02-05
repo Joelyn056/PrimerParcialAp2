@@ -61,7 +61,7 @@
         </div>
 
         <div class="card-footer">
-            <!--Butones-->
+            <!--B0tones-->
             <div class="form-group">
                 <div class="col-lg-2 mr-3"">
                     <asp:LinkButton ID="NuevoLinkButton" CssClass="btn btn-primary" runat="server" CausesValidation="False" OnClick="NuevoLinkButton_Click">

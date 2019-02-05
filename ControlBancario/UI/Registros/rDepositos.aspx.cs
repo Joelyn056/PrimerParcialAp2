@@ -98,5 +98,23 @@ namespace ControlBancario.UI.Registros
                 }
             }
         }
+
+        protected void EliminarLinkButton_Click(object sender, EventArgs e)
+        {
+            RepositorioDeposito rep = new RepositorioDeposito();
+            Depositos d = rep.Buscar(ToInt(IdTextBox.Text));
+
+            if(d != null)
+            {
+                if (rep.Eliminar(ToInt(IdTextBox.Text)))
+                {
+                    CallModal("Se a Eliminado el deposito");
+                    Limpiar();
+                }
+                else
+                    CallModal("No se pudo eliminar el deposito");
+
+            }
+        }
     }
 }
