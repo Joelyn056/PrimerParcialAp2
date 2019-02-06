@@ -67,6 +67,7 @@ namespace ControlBancario.UI.Registros
                 LlenaCampo(d);
             else
                 CallModal("Este deposito no existe");
+            
         }
 
         protected void NuevoLinkButton_Click(object sender, EventArgs e)
