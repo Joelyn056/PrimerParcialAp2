@@ -27,7 +27,7 @@ namespace ControlBancario.UI.Registros
 
         private Cuentas LlenaClase()
         {
-            return new Cuentas(
+           return new Cuentas(
                 ToInt(IdTextBox.Text),
                 DateTime.Parse(FechaTextBox.Text),
                 NombreTextBox.Text,
