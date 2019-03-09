@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cuentas.cs" />
+    <Compile Include="Cuotas.cs" />
     <Compile Include="Depositos.cs" />
     <Compile Include="Prestamos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
