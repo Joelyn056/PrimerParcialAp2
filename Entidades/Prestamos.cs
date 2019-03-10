@@ -33,7 +33,7 @@ namespace Entidades
             Detalle = new List<Cuotas>();
         }
 
-        public Prestamos(int prestamosId, int cuentaId, DateTime fecha, decimal capital, float interes, int tiempo, decimal total)
+        public Prestamos(int prestamosId, int cuentaId, DateTime fecha, decimal capital, float interes, int tiempo, decimal total, List<Cuotas> detalle)
         {
             PrestamosId = prestamosId;
             CuentaId = cuentaId;
@@ -42,29 +42,19 @@ namespace Entidades
             Interes = interes;
             Tiempo = Tiempo;
             Total = total;
-            Detalle = new List<Cuotas>();
+            Detalle = detalle;
+            
         }
 
-        public void AddCuota(int numCuotas, DateTime fecha, decimal interes, decimal capital, decimal montoPorCuota, decimal balance)
+        public Prestamos(int prestamosId, int cuentaId, decimal capital, float interes, int tiempo, decimal total, List<Cuotas> detalle)
         {
-            Detalle.Add(new Cuotas(0, numCuotas, fecha, interes, capital, montoPorCuota, balance));
-        }
-
-        public void AddCuota(string numCuotas, DateTime fecha, string interes, string capital, string montoPorCuota, string balance)
-        {
-            Detalle.Add(new Cuotas(
-               0,
-                int.Parse(numCuotas),
-                fecha = DateTime.Now,
-                decimal.Parse(interes),
-                decimal.Parse(capital),
-                decimal.Parse(montoPorCuota),
-                decimal.Parse(balance)));
-        }
-
-        public void AddCuota(Cuotas cuotas)
-        {
-            Detalle.Add(cuotas);
-        }
+            PrestamosId = prestamosId;
+            CuentaId = cuentaId;
+            Capital = capital;
+            Interes = interes;
+            Tiempo = tiempo;
+            Total = total;
+            Detalle = detalle;
+        }      
     }
 }

@@ -15,6 +15,7 @@
             <div class="form-group row justify-content-center">
                 <asp:Label ID="Label1" CssClass="col-lg-2 col-form-label" Text="CuentaId" runat="server">CuentaId:</asp:Label>
                 <div class="col-lg-4">
+
                     <asp:TextBox ID="IdTextBox" CssClass="form-control" TextMode="Number" runat="server"></asp:TextBox>
                 </div>
                 <div class="col-lg-1">
