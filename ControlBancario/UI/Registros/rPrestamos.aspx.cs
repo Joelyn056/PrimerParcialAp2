@@ -185,7 +185,10 @@ namespace ControlBancario.UI.Registros
 
         protected void ImprimirLinkButton_Click(object sender, EventArgs e)
         {
-            
+            if(SeBusco)
+            {
+                
+            }
         }
     }
 }

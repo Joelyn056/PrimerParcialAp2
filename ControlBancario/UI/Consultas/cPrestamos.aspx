@@ -9,7 +9,7 @@
             <h3>Consulta de pretasmos</h3>
         </div>
 
-          <!--Card body-->
+        <!--Card body-->
         <div class="card-body">
             <!--Rango fecha-->
             <div class="form-group row justify-content-center">
@@ -25,10 +25,10 @@
             </div>
 
 
-             <!---->
+            <!---->
             <div class="row justify-content-center">
                 <div class="col-lg-4">
-                    <asp:Label ID="FiltroLabel"  runat="server" Text="Filtrar-por">
+                    <asp:Label ID="FiltroLabel" runat="server" Text="Filtrar-por">
                         Filtro:
                     </asp:Label>
                     <asp:DropDownList ID="FiltroDropDownList" CssClass="form-control" runat="server">
@@ -39,38 +39,48 @@
                         <asp:ListItem>Capital</asp:ListItem>
                         <asp:ListItem>Interes</asp:ListItem>
                         <asp:ListItem>Tiempo</asp:ListItem>
-                        <asp:ListItem>Total</asp:ListItem>         
+                        <asp:ListItem>Total</asp:ListItem>
                     </asp:DropDownList>
-                </div>  
+                </div>
                 <div class="col-lg-1"></div>
                 <div class="col-lg-4">
                     <asp:Label ID="BuscarLabel" runat="server" Text="Buscar">Buscar:</asp:Label>
                     <asp:TextBox ID="BuscarTextBox" CssClass="form-control" runat="server"></asp:TextBox>
                 </div>
                 <div class="col-lg-1 p-0">
-                    <asp:LinkButton ID="BuscarLinkButton" CssClass="btn btn-secondary mt-4" runat="server" OnClick="BuscarLinkButton_Click">
+                    <asp:LinkButton ID="BuscarLinkButton" CssClass="btn btn-secondary mt-4" runat="server">
                         <span class="fas fa-search"></span>
                         Buscar
                     </asp:LinkButton>
                 </div>
             </div>
 
-             <!--Grid-->
+            <!--Grid-->
             <div class="row justify-content-center mt-3">
-                <div class="col-lg-11">           
+                <div class="col-lg-11">
                     <asp:GridView ID="PrestamoGridView" runat="server" AllowPaging="true" PageSize="7" CssClass="table table-striped table-hover table-responsive-lg" AutoGenerateColumns="False" OnPageIndexChanging="PrestamoGridView_PageIndexChanging">
                         <Columns>
+                            <asp:BoundField DataField="PrestamosId" HeaderText="PrestamosId" />
                             <asp:BoundField DataField="Fecha" HeaderText="Fecha" />
+                            <asp:BoundField DataField="CuentaId" HeaderText="CuentaId" />
                             <asp:BoundField DataField="Capital" HeaderText="Capital" />
                             <asp:BoundField DataField="Interes" HeaderText="Interes" />
                             <asp:BoundField DataField="Tiempo" HeaderText="Tiempo" />
                             <asp:BoundField DataField="Total" HeaderText="Total" />
-                        </Columns>    
+                        </Columns>
                     </asp:GridView>
                 </div>
             </div>
 
-             <!--Card body end-->
+            <div class="panel">
+                <div class="text-center">
+                    <div class="form-group">
+                        <asp:Button ID="ButtonImprimir" class="form-control btn btn-primary btn-sm" runat="server" Text="Imprimir Reporte" OnClick="ButtonImprimir_Click" />
+                    </div>
+                </div>
+            </div>
+
+            <!--Card body end-->
         </div>
     </div>
 </asp:Content>

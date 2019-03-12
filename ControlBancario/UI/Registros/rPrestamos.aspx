@@ -173,17 +173,17 @@
                  </div>
 
                  <!--Imprimir-->
-                 <div class="col-lg-1 mr-3">
+                <%-- <div class="col-lg-1 mr-3">
                      <asp:LinkButton ID="ImprimirLinkButton" CssClass="btn btn-warning" runat="server" CausesValidation="False" OnClick="ImprimirLinkButton_Click">
                         <span class="fas fa-print"></span>
                         Imprimir
                      </asp:LinkButton>
                  </div>
-             </div>
+             </div>--%>
 
              <!--Card footer end-->
          </div>
-    <%--</div>--%>
+    </div>
 
     <!--Report Modal-->
     <div class="modal fade" id="reportModal" role="dialog" runat="server">
