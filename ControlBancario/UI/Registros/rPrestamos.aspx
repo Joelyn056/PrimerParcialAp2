@@ -1,4 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="rPrestamos.aspx.cs" Inherits="ControlBancario.UI.Registros.rPrestamos" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="rPrestamos.aspx.cs" Inherits="ControlBancario.UI.Registros.rPrestamos" %>
+
+<%@ Register Assembly="Microsoft.ReportViewer.WebForms" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
@@ -29,7 +31,7 @@
                 <asp:Label ID="Label4" CssClass="col-lg-2 col-form-label" Text="PrestamoId" runat="server">PrestamoId:</asp:Label>
                 <div class="col-lg-4">
 
-                    <asp:TextBox ID="IdTextBox" CssClass="form-control" TextMode="Number" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="PrestamosIdTextBox" CssClass="form-control" TextMode="Number" runat="server"></asp:TextBox>
                 </div>
                 <div class="col-lg-1">
                     <asp:LinkButton ID="BuscarLinkButton" CssClass="btn btn-secondary" runat="server" CausesValidation="False">
@@ -66,13 +68,13 @@
 
          <%--Capital--%>
         <div class="form-group row justify-content-center">
-            <asp:Label ID="Label3" CssClass="col-lg-3 col-form-label" Text="Capital" runat="server">Capital:</asp:Label>
+            <asp:Label ID="Label3" CssClass="col-lg-2 col-form-label" Text="Capital" runat="server">Capital:</asp:Label>
             <div class="col-lg-4">
-                <asp:TextBox ID="TextBox1" CssClass="form-control" TextMode="Number" runat="server"></asp:TextBox>
+                <asp:TextBox ID="CapitalTextBox" CssClass="form-control" TextMode="Number" runat="server"></asp:TextBox>
             </div>
         </div>
-             <div class="col-lg-1">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="CuentaDropDownList" runat="server" Text="*" Display="Dynamic" ErrorMessage="Debes seleccionar una cuenta bancaria"></asp:RequiredFieldValidator>
+             <div class="col-lg-4">
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="CuentaDropDownList" runat="server" Text="*" Display="Dynamic" ErrorMessage="Debes ingresar un capital"></asp:RequiredFieldValidator>
             </div>
     </div>
 
@@ -106,7 +108,7 @@
         </div>
         <div class="w-100"></div>
         <div class="col-lg-1">
-            <asp:LinkButton ID="CalcularLinkButton" CssClass="btn btn-primary" Text="text" runat="server" CausesValidation="true">
+            <asp:LinkButton ID="CalcularLinkButton" CssClass="btn btn-primary" Text="text" runat="server" CausesValidation="true" OnClick="CalcularLinkButton_Click">
                         <span class=""></span>             
                         Calcular
             </asp:LinkButton>
@@ -118,7 +120,7 @@
         <div class="col-lg-11">
             <asp:GridView ID="CuotaGridView" runat="server" AllowPaging="true" PageSize="7" CssClass="table table-striped table-hover table-responsive-lg" AutoGenerateColumns="False">
                 <Columns>
-                    <asp:BoundField DataField="NoCuota" HeaderText="Cuota#" />
+                    <asp:BoundField DataField="NoCuota" HeaderText="No Cuota" />
                     <asp:BoundField DataField="Fecha" HeaderText="Fecha" />
                     <asp:BoundField DataField="Interes" HeaderText="Interes" />
                     <asp:BoundField DataField="Capital" HeaderText="Capital" />
@@ -130,14 +132,15 @@
 
     <div class="form-group row justify-content-center">
         <div class="col-lg-2 mr-2">
-            <asp:TextBox ID="InteresTotalTextBox" CssClass="form-control" Visible="false" ReadOnly="true" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TotalTextBox" CssClass="form-control" Visible="false" ReadOnly="true" runat="server"></asp:TextBox>
         </div>
-        <div class="col-lg-2 mr-3">
+        </div>
+       <%-- <div class="col-lg-2 mr-3">
             <asp:TextBox ID="CapitalTotalTextBox" CssClass="form-control" Visible="false" ReadOnly="true" runat="server"></asp:TextBox>
         </div>
         <div class="col-lg-2 ml-5 mr-1">
         </div>
-    </div>
+    </div>--%>
 
     <!--Card body end-->
     </div>
@@ -147,7 +150,7 @@
              <div class="form-group row justify-content-center">
                   <!--Nuevo-->
                 <div class="col-lg-1 mr-1">
-                    <asp:LinkButton ID="NuevoLinkButton" CssClass="btn btn-primary" runat="server" CausesValidation="False">
+                    <asp:LinkButton ID="NuevoLinkButton" CssClass="btn btn-primary" runat="server" CausesValidation="False" OnClick="NuevoLinkButton_Click">
                         <span class="fas fa-plus"></span>
                         Nuevo
                     </asp:LinkButton>
@@ -155,7 +158,7 @@
 
                  <!--Guardar-->
                  <div class="col-lg-1 mr-3">
-                     <asp:LinkButton ID="GuardarLinkButton" CssClass="btn btn-success" runat="server">
+                     <asp:LinkButton ID="GuardarLinkButton" CssClass="btn btn-success" runat="server" OnClick="GuardarLinkButton_Click">
                         <span class="fas fa-save"></span>
                         Guardar
                      </asp:LinkButton>
@@ -163,7 +166,7 @@
 
                  <!--Eliminar-->
                  <div class="col-lg-1 mr-3">
-                     <asp:LinkButton ID="EliminarLinkButton" CssClass="btn btn-danger" runat="server" CausesValidation="False">
+                     <asp:LinkButton ID="EliminarLinkButton" CssClass="btn btn-danger" runat="server" CausesValidation="False" OnClick="EliminarLinkButton_Click">
                         <span class="fas fa-trash-alt"></span>
                         Eliminar
                      </asp:LinkButton>
@@ -171,7 +174,7 @@
 
                  <!--Imprimir-->
                  <div class="col-lg-1 mr-3">
-                     <asp:LinkButton ID="ImprimirLinkButton" CssClass="btn btn-light" runat="server" CausesValidation="False">
+                     <asp:LinkButton ID="ImprimirLinkButton" CssClass="btn btn-warning" runat="server" CausesValidation="False" OnClick="ImprimirLinkButton_Click">
                         <span class="fas fa-print"></span>
                         Imprimir
                      </asp:LinkButton>
@@ -187,7 +190,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <!--Body-->
-                <%--  <div class="modal-body">
+                  <%--<div class="modal-body">
                     <rsweb:reportviewer ID="PrestamoReportViewer" Width="100%" runat="server">
                         <ServerReport ReportPath=""  ReportServerUrl=""/>
                     </rsweb:reportviewer>

@@ -12,8 +12,8 @@ namespace Entidades
     {
         [Key]
         public int PrestamosId { get; set; }
-        public int CuentaId { get; set; }
         public DateTime Fecha { get; set; }
+        public int CuentaId { get; set; }       
         public decimal Capital { get; set; }
         public float Interes { get; set; }
         public int Tiempo { get; set; }

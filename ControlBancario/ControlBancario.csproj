@@ -116,6 +116,7 @@
     </Content>
     <Content Include="UI\Consultas\cCuentas.aspx" />
     <Content Include="UI\Consultas\cDepositos.aspx" />
+    <Content Include="UI\Consultas\cPrestamos.aspx" />
     <Content Include="UI\Registros\rCuentas.aspx" />
     <Content Include="UI\Registros\rDepositos.aspx" />
     <Content Include="UI\Registros\rPrestamos.aspx" />
@@ -136,6 +137,11 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="PrimerParcialAp2DbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrimerParcialAp2DbDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -159,6 +165,13 @@
     </Compile>
     <Compile Include="UI\Consultas\cDepositos.aspx.designer.cs">
       <DependentUpon>cDepositos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cPrestamos.aspx.cs">
+      <DependentUpon>cPrestamos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cPrestamos.aspx.designer.cs">
+      <DependentUpon>cPrestamos.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\Registros\rCuentas.aspx.cs">
       <DependentUpon>rCuentas.aspx</DependentUpon>
@@ -185,6 +198,17 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Site.Master" />
+    <Content Include="PrimerParcialAp2DbDataSet.xsc">
+      <DependentUpon>PrimerParcialAp2DbDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="PrimerParcialAp2DbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PrimerParcialAp2DbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="PrimerParcialAp2DbDataSet.xss">
+      <DependentUpon>PrimerParcialAp2DbDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -206,8 +230,9 @@
       <Name>Entidades</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Reportes\" />
+    <EmbeddedResource Include="Reportes\Cuentas.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

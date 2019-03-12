@@ -13,7 +13,7 @@ namespace Entidades
     {
         [Key]
         public int Id { get; set; }
-        public int NumCuotas { get; set; }        
+        public int NoCuotas { get; set; }        
         public DateTime Fecha { get; set;}
         public decimal Interes { get; set; }
         public decimal Capital { get; set; }
@@ -22,7 +22,7 @@ namespace Entidades
 
         public Cuotas()
         {
-            NumCuotas = 0;
+            NoCuotas = 0;
             Id = 0;
             Fecha = DateTime.Now;
             Interes = 0;
@@ -31,10 +31,10 @@ namespace Entidades
             Balance = 0;
         }
 
-        public Cuotas(int id, int numCuotas, DateTime fecha, decimal interes, decimal capital, decimal montoPorCuota, decimal balance)
+        public Cuotas(int id, int noCuotas, DateTime fecha, decimal interes, decimal capital, decimal montoPorCuota, decimal balance)
         {
             Id = id;
-            NumCuotas = numCuotas;           
+            NoCuotas = noCuotas;           
             Fecha = fecha;
             Interes = interes;
             Capital = capital;

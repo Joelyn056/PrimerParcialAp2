@@ -61,7 +61,6 @@
       <Name>Entidades</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Scripts\SQLQuery1.sql" />
   </ItemGroup>

@@ -23,5 +23,29 @@ create table Depositos
 
 );
 
+create table Prestamos
+(
+	PrestamosId int primary key identity(1,1),
+	Fecha Date,
+	CuentaId int not null,
+	Capital money,
+	Interes float,
+	Tiempo int
+);
+
+create table Cuotas
+(
+	Id int primary key identity(1,1),
+	NoCuotas int,
+	PrestamosId int not null,
+	Interes float,
+	Capital money,
+	MontoPorCuota money,
+	Balance money
+
+);
+
 select * from Cuentas;
 select * from Depositos;	
+select * from Prestamos;	
+select * from Cuotas;	
