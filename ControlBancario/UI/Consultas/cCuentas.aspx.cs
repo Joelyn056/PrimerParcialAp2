@@ -8,6 +8,7 @@ using BLL;
 using Entidades;
 using System.Linq.Expressions;
 using ControlBancario.App_Code;
+using ControlBancario.Reportes;
 
 
 namespace ControlBancario.UI.Consultas
@@ -18,13 +19,24 @@ namespace ControlBancario.UI.Consultas
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                FInicialTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                FFinalTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            }
         }
 
         private void Filtrar()
         {
-            int dato = 0;
-            switch(FiltroDropDownList.SelectedIndex)
+            var dato = 0;
+            string i = DateTime.Parse(FInicialTextBox.Text).Date.ToString("yyyy-MM-dd");
+            DateTime fInicial = DateTime.Parse(i);
+
+            string f = DateTime.Parse(FFinalTextBox.Text).Date.ToString("yyyy-MM-dd");
+            DateTime fFinal = DateTime.Parse(f);
+
+
+            switch (FiltroDropDownList.SelectedIndex)
             {
                 case 0://Todo
                     filter = x => true;
@@ -65,6 +77,12 @@ namespace ControlBancario.UI.Consultas
             Filtrar();
             CuentaGridView.DataSource = rep.GetList(filter);
             CuentaGridView.DataBind();
+        }
+
+        protected void ButtonImprimir_Click(object sender, EventArgs e)
+        {
+          
+            Response.Redirect(@"~/Reportes/ListadoDeCuentas.aspx");
         }
     }
 }

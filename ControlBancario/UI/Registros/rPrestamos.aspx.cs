@@ -15,16 +15,35 @@ namespace ControlBancario.UI.Registros
     public partial class rPrestamos : BasePage
     {
         public bool SeBusco { get; set; }
-        List<Cuotas> Detalle = new List<Cuotas>();
+        List<Cuotas> detalle = new List<Cuotas>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            CuotaGridView.DataSource = null;
-            CuotaGridView.DataBind();
-            LlenarDropDownList();
+            if(!IsPostBack)
+            {
+                PrestamoReportViewer.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
+                PrestamoReportViewer.Reset();
+
+                PrestamoReportViewer.LocalReport.ReportPath = Server.MapPath(@"~\Report\ReportePrestamos.rdlc");
+
+                LlenarDropDownList();
+                ViewState.Add("Detalle", detalle);
+                ViewState.Add("SeBusco", SeBusco);
+
+                //CuotaGridView.DataSource = null;
+                //CuotaGridView.DataBind();
+                //LlenarDropDownList();
+                //FechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                //PrestamosIdTextBox.Text = "0";
+                //TotalTextBox.Text = "0";
+            }
+            else
+            {
+                detalle = (List<Cuotas>)ViewState["Detalle"];
+                SeBusco = (bool)ViewState["SeBusco"];
+            }
+
             FechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
-            PrestamosIdTextBox.Text = "0";
-            TotalTextBox.Text = "0";
-            ViewState["Prestamos"] = new Prestamos();
+
         }
 
         public void LlenarCampos(Prestamos prestamos)
@@ -38,11 +57,14 @@ namespace ControlBancario.UI.Registros
             TiempoTextBox.Text = prestamos.Tiempo.ToString();
             TotalTextBox.Text = prestamos.Total.ToString();
             CuotaGridView.DataSource = prestamos.Detalle.ToList();
-            this.BindGrid();
+            CuotaGridView.DataBind();
+            ViewState["Detalle"] = prestamos.Detalle;
+           
         }
 
         private Prestamos LlenaClase()
         {
+
             Prestamos prestamos = new Prestamos();
 
             prestamos.PrestamosId = ToInt(PrestamosIdTextBox.Text);
@@ -52,7 +74,8 @@ namespace ControlBancario.UI.Registros
             prestamos.Interes = ToInt(InteresTextBox.Text);
             prestamos.Tiempo = ToInt(TiempoTextBox.Text);
             prestamos.Total = ToInt(TotalTextBox.Text);
-            prestamos.Detalle = Detalle;
+            prestamos.Detalle = detalle;
+
 
             return prestamos;
 
@@ -67,8 +90,10 @@ namespace ControlBancario.UI.Registros
             InteresTextBox.Text = string.Empty;
             TiempoTextBox.Text = string.Empty;
             TotalTextBox.Text = string.Empty;
-            ViewState["Prestamos"] = new Prestamos();
-            this.BindGrid();
+            CuotaGridView.DataSource = null;
+            CuotaGridView.DataBind();
+            ViewState["SeBusco"] = SeBusco;
+          
 
         }
 
@@ -76,25 +101,19 @@ namespace ControlBancario.UI.Registros
         private void LlenarDropDownList()
         {
             Repositorio<Cuentas> rep = new Repositorio<Cuentas>();
-            CuentaDropDownList.Items.Clear();
             CuentaDropDownList.DataSource = rep.GetList(x => true);
             CuentaDropDownList.DataValueField = "CuentaId";
-            CuentaDropDownList.DataValueField = "Nombres";
+            CuentaDropDownList.DataTextField = "Nombre";
             CuentaDropDownList.DataBind();
             CuentaDropDownList.Items.Insert(0, new ListItem("", ""));
 
-            ViewState["Prestamos"] = new Prestamos();
+            
         }
 
-        protected void BindGrid()
-        {
-            CuotaGridView.DataSource = ((Prestamos)ViewState["Prestamos"]).Detalle;
-            CuotaGridView.DataBind();
-        }
 
         protected void CalcularLinkButton_Click(object sender, EventArgs e)
         {
-            Detalle.Clear();
+            detalle.Clear();
             int tiempo = ToInt(TiempoTextBox.Text);
             decimal tasa = (ToDecimal(InteresTextBox.Text) / 100);
             decimal cuota = ToDecimal(CapitalTextBox.Text) * (tasa/ 12) / (decimal)(1 - Math.Pow((double)(1 + (tasa / 12)), -tiempo));
@@ -115,14 +134,15 @@ namespace ControlBancario.UI.Registros
                 totalc += c.Capital;
                 totalI += c.Interes;
 
-                Detalle.Add(c);
+                detalle.Add(c);
 
-                CuotaGridView.DataSource = Detalle.ToList();
-                CuotaGridView.DataBind();
-                ViewState["Detalle"] = Detalle;
-                TotalTextBox.Text = totalc.ToString();
-                
+               
             }
+
+            CuotaGridView.DataSource = detalle.ToList();
+            CuotaGridView.DataBind();
+            ViewState["Detalle"] = detalle;
+            TotalTextBox.Text = totalc.ToString();
         }
 
         protected void NuevoLinkButton_Click(object sender, EventArgs e)
@@ -185,10 +205,41 @@ namespace ControlBancario.UI.Registros
 
         protected void ImprimirLinkButton_Click(object sender, EventArgs e)
         {
-            if(SeBusco)
+            if (SeBusco)
             {
-                
+                PrestamoReportViewer.LocalReport.DataSources.Clear();
+
+                int id = ToInt(PrestamosIdTextBox.Text);
+                PrestamoReportViewer.LocalReport.DataSources.Add(
+                    new Microsoft.Reporting.WebForms.ReportDataSource(
+                        "Prestamo",
+                        new Repositorio<Prestamos>().GetList(x => x.PrestamosId == id)));
+
+                PrestamoReportViewer.LocalReport.DataSources.Add(
+                    new Microsoft.Reporting.WebForms.ReportDataSource(
+                        "Cuota",
+                        new ReporsitorioPrestamos().Buscar(id).Detalle.ToList()));
+
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Report",
+                    "$(function() { openReportModal(); });", true);
             }
+            else
+                CallModal("Debe Buscar el prestamo primero");
+        }
+
+        protected void BuscarLinkButton_Click(object sender, EventArgs e)
+        {
+            ReporsitorioPrestamos rep = new ReporsitorioPrestamos();
+            Prestamos prestamos = rep.Buscar(ToInt(PrestamosIdTextBox.Text));
+
+            if (prestamos != null)
+            {
+                LlenarCampos(prestamos);
+                SeBusco = true;
+                ViewState["SeBusco"] = SeBusco;
+            }
+            else
+                CallModal("Este Prestamo no Existe");
         }
     }
 }

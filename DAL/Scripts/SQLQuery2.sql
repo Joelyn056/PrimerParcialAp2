@@ -1,6 +1,6 @@
-CREATE DATABASE PrimerParcialAp2Db
+CREATE DATABASE PrimerParcialApIIDb
 go
-Use PrimerParcialAp2Db
+Use PrimerParcialApIIDb
 go
 
 create table Cuentas 

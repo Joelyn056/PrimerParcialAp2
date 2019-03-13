@@ -238,6 +238,15 @@ namespace ControlBancario.UI.Registros {
         protected global::System.Web.UI.WebControls.LinkButton EliminarLinkButton;
         
         /// <summary>
+        /// ImprimirLinkButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton ImprimirLinkButton;
+        
+        /// <summary>
         /// reportModal control.
         /// </summary>
         /// <remarks>
@@ -245,6 +254,15 @@ namespace ControlBancario.UI.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl reportModal;
+        
+        /// <summary>
+        /// PrestamoReportViewer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.Reporting.WebForms.ReportViewer PrestamoReportViewer;
         
         /// <summary>
         /// ValidationSummary control.

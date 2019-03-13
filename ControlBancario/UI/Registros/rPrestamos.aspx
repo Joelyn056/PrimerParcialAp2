@@ -34,7 +34,7 @@
                     <asp:TextBox ID="PrestamosIdTextBox" CssClass="form-control" TextMode="Number" runat="server"></asp:TextBox>
                 </div>
                 <div class="col-lg-1">
-                    <asp:LinkButton ID="BuscarLinkButton" CssClass="btn btn-secondary" runat="server" CausesValidation="False">
+                    <asp:LinkButton ID="BuscarLinkButton" CssClass="btn btn-secondary" runat="server" CausesValidation="False" OnClick="BuscarLinkButton_Click">
                         <span class="fas fa-search"></span>
                         Buscar
                     </asp:LinkButton>
@@ -73,7 +73,7 @@
                 <asp:TextBox ID="CapitalTextBox" CssClass="form-control" TextMode="Number" runat="server"></asp:TextBox>
             </div>
         </div>
-             <div class="col-lg-4">
+             <div class="col-lg-1">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="CuentaDropDownList" runat="server" Text="*" Display="Dynamic" ErrorMessage="Debes ingresar un capital"></asp:RequiredFieldValidator>
             </div>
     </div>
@@ -173,28 +173,28 @@
                  </div>
 
                  <!--Imprimir-->
-                <%-- <div class="col-lg-1 mr-3">
+                 <div class="col-lg-1 mr-3">
                      <asp:LinkButton ID="ImprimirLinkButton" CssClass="btn btn-warning" runat="server" CausesValidation="False" OnClick="ImprimirLinkButton_Click">
                         <span class="fas fa-print"></span>
                         Imprimir
                      </asp:LinkButton>
                  </div>
-             </div>--%>
+             </div>
 
              <!--Card footer end-->
          </div>
-    </div>
+    <%--</div>--%>
 
     <!--Report Modal-->
     <div class="modal fade" id="reportModal" role="dialog" runat="server">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <!--Body-->
-                  <%--<div class="modal-body">
+                  <div class="modal-body">
                     <rsweb:reportviewer ID="PrestamoReportViewer" Width="100%" runat="server">
                         <ServerReport ReportPath=""  ReportServerUrl=""/>
                     </rsweb:reportviewer>
-                </div>--%>
+                </div>
 
                 <!--Footer-->
                 <div class="modal-footer">

@@ -9,6 +9,20 @@
         </div>
 
         <div class="card-body">
+
+                 <!--Rango fecha-->
+            <div class="form-group row justify-content-center">
+                <div class="col-lg-4">
+                    <asp:Label ID="Label1" runat="server" Text="Fecha-inicio">Desde:</asp:Label>
+                    <asp:TextBox ID="FInicialTextBox" CssClass="form-control" TextMode="Date" runat="server"></asp:TextBox>
+                </div>
+                <div class="col-lg-2"></div>
+                <div class="col-lg-4">
+                    <asp:Label ID="Label2" runat="server" Text="Fecha-inicial">Hasta:</asp:Label>
+                    <asp:TextBox ID="FFinalTextBox" CssClass="form-control" TextMode="Date" runat="server"></asp:TextBox>
+                </div>
+            </div>
+
             <!---->
             <div class="row justify-content-center">
                 <div class="col-lg-4">
@@ -48,6 +62,18 @@
                         </Columns>    
                     </asp:GridView>
                 </div>
+            </div>
+
+
+
+            <div class="panel">
+                <div class="text-center">
+                    <div class="form-group">                       
+                        <asp:Button ID="ButtonImprimir" class=" btn btn-warning" runat="server"  Text="Imprimir Reporte"/>
+                    <%--<span class="fas fa-print"></span>--%>
+                     </div>
+                </div>
+
             </div>
 
             <!--Card body end-->

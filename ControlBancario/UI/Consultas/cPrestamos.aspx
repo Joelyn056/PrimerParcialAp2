@@ -5,7 +5,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="card">
-        <div class="card-header text-center text-white bg-primary">
+        <div class="card-header text-center text-white bg-success">
             <h3>Consulta de pretasmos</h3>
         </div>
 
@@ -58,7 +58,8 @@
             <!--Grid-->
             <div class="row justify-content-center mt-3">
                 <div class="col-lg-11">
-                    <asp:GridView ID="PrestamoGridView" runat="server" AllowPaging="true" PageSize="7" CssClass="table table-striped table-hover table-responsive-lg" AutoGenerateColumns="False" OnPageIndexChanging="PrestamoGridView_PageIndexChanging">
+                    <asp:GridView ID="PrestamoGridView" runat="server" class="table table-condensed table-bordered table-responsive" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+                   <%-- <asp:GridView ID="PrestamoGridView" runat="server" AllowPaging="true" PageSize="7" CssClass="table table-striped table-hover table-responsive-lg" AutoGenerateColumns="False" OnPageIndexChanging="PrestamoGridView_PageIndexChanging">--%>
                         <Columns>
                             <asp:BoundField DataField="PrestamosId" HeaderText="PrestamosId" />
                             <asp:BoundField DataField="Fecha" HeaderText="Fecha" />
@@ -74,10 +75,12 @@
 
             <div class="panel">
                 <div class="text-center">
-                    <div class="form-group">
-                        <asp:Button ID="ButtonImprimir" class="form-control btn btn-primary btn-sm" runat="server" Text="Imprimir Reporte" OnClick="ButtonImprimir_Click" />
-                    </div>
+                    <div class="form-group">                       
+                        <asp:Button ID="ButtonImprimir" class=" btn btn-warning" runat="server"  Text="Imprimir Reporte" OnClick="ButtonImprimir_Click" />
+                    <%--<span class="fas fa-print"></span>--%>
+                     </div>
                 </div>
+
             </div>
 
             <!--Card body end-->

@@ -101,6 +101,9 @@
     <Content Include="Content\Js\toastr.js" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Reportes\ListadoDeCuentas.aspx" />
+    <Content Include="Reportes\ReporteDepositos.aspx" />
+    <Content Include="Reportes\ReportePrestamos.aspx" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -138,12 +141,38 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="PrimerParcialAp2DbDataSet.Designer.cs">
+    <Compile Include="PrestamosDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PrimerParcialAp2DbDataSet.xsd</DependentUpon>
+      <DependentUpon>PrestamosDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PrimerParcialApIIDbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrimerParcialApIIDbDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\ListadoDeCuentas.aspx.cs">
+      <DependentUpon>ListadoDeCuentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ListadoDeCuentas.aspx.designer.cs">
+      <DependentUpon>ListadoDeCuentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteDepositos.aspx.cs">
+      <DependentUpon>ReporteDepositos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteDepositos.aspx.designer.cs">
+      <DependentUpon>ReporteDepositos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportePrestamos.aspx.cs">
+      <DependentUpon>ReportePrestamos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportePrestamos.aspx.designer.cs">
+      <DependentUpon>ReportePrestamos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -198,16 +227,27 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Site.Master" />
-    <Content Include="PrimerParcialAp2DbDataSet.xsc">
-      <DependentUpon>PrimerParcialAp2DbDataSet.xsd</DependentUpon>
+    <Content Include="PrimerParcialApIIDbDataSet.xsc">
+      <DependentUpon>PrimerParcialApIIDbDataSet.xsd</DependentUpon>
     </Content>
-    <None Include="PrimerParcialAp2DbDataSet.xsd">
+    <Content Include="PrestamosDataSet.xsc">
+      <DependentUpon>PrestamosDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="PrestamosDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PrimerParcialAp2DbDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>PrestamosDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <Content Include="PrimerParcialAp2DbDataSet.xss">
-      <DependentUpon>PrimerParcialAp2DbDataSet.xsd</DependentUpon>
+    <Content Include="PrestamosDataSet.xss">
+      <DependentUpon>PrestamosDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="PrimerParcialApIIDbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PrimerParcialApIIDbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="PrimerParcialApIIDbDataSet.xss">
+      <DependentUpon>PrimerParcialApIIDbDataSet.xsd</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -230,8 +270,11 @@
       <Name>Entidades</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Reportes\" />
+    <EmbeddedResource Include="Reportes\ListadoDeCuentas.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteDepositos.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportePrestamos.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

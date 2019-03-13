@@ -18,12 +18,23 @@ namespace ControlBancario.UI.Consultas
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                FInicialTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                FFinalTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            }
 
         }
 
         private void Filtrar()
         {
-            int dato = 0;
+            
+            var dato = 0;
+            string i = DateTime.Parse(FInicialTextBox.Text).Date.ToString("yyyy-MM-dd");
+            DateTime fInicial = DateTime.Parse(i);
+
+            string f = DateTime.Parse(FFinalTextBox.Text).Date.ToString("yyyy-MM-dd");
+            DateTime fFinal = DateTime.Parse(f);
             switch (FiltroDropDownList.SelectedIndex)
             {
                 case 0://Todo
@@ -70,6 +81,11 @@ namespace ControlBancario.UI.Consultas
             DepositoGridView.DataSource = rep.GetList(filter);
             DepositoGridView.PageIndex = e.NewPageIndex;
             DepositoGridView.DataBind();
+        }
+
+        protected void ButtonImprimir_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(@"~/Reportes/ListadoDeDepositos.aspx");
         }
     }
 }
