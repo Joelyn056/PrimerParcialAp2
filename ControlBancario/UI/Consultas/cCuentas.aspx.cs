@@ -48,7 +48,7 @@ namespace ControlBancario.UI.Consultas
                     break;
 
                 case 2: //Fecha
-                    filter = (x => x.Fecha.Equals(BuscarTextBox.Text));
+                    filter = (x => x.Fecha.Equals(BuscarTextBox.Text));                   
                     break;
 
                 case 3://Nombre
@@ -82,7 +82,12 @@ namespace ControlBancario.UI.Consultas
         protected void ButtonImprimir_Click(object sender, EventArgs e)
         {
           
-            Response.Redirect(@"~/Reportes/ListadoDeCuentas.aspx");
+           // Response.Redirect(@"~/Reportes/ReporteCuentas.aspx");
+        }
+
+        protected void ButtonImprimir_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect(@"~/Reportes/ReporteCuentas.aspx");
         }
     }
 }

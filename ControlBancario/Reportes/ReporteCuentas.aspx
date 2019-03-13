@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ListadoDeCuentas.aspx.cs" Inherits="ControlBancario.Reportes.ListadoDeCuentas" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ReporteCuentas.aspx.cs" Inherits="ControlBancario.Reportes.ReporteCuentas" %>
 <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 <!DOCTYPE html>
 

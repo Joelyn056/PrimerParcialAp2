@@ -96,7 +96,7 @@ namespace ControlBancario.UI.Consultas
 
         protected void ButtonImprimir_Click(object sender, EventArgs e)
         {
-            Response.Redirect(@"~/Reportes/ListadoDePrestamos.aspx");
+            Response.Redirect(@"~/Reportes/ReportePrestamos.aspx");
         }
       
     }

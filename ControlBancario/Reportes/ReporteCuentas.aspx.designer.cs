@@ -10,7 +10,7 @@
 namespace ControlBancario.Reportes {
     
     
-    public partial class ListadoDeCuentas {
+    public partial class ReporteCuentas {
         
         /// <summary>
         /// form1 control.

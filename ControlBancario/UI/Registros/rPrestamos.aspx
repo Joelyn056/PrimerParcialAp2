@@ -71,12 +71,11 @@
             <asp:Label ID="Label3" CssClass="col-lg-2 col-form-label" Text="Capital" runat="server">Capital:</asp:Label>
             <div class="col-lg-4">
                 <asp:TextBox ID="CapitalTextBox" CssClass="form-control" TextMode="Number" runat="server"></asp:TextBox>
-            </div>
-        </div>
+            </div>       
              <div class="col-lg-1">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="CuentaDropDownList" runat="server" Text="*" Display="Dynamic" ErrorMessage="Debes ingresar un capital"></asp:RequiredFieldValidator>
             </div>
-    </div>
+       </div>
 
 
     <!--Interes anual-->
@@ -120,7 +119,7 @@
         <div class="col-lg-11">
             <asp:GridView ID="CuotaGridView" runat="server" AllowPaging="true" PageSize="7" CssClass="table table-striped table-hover table-responsive-lg" AutoGenerateColumns="False">
                 <Columns>
-                    <asp:BoundField DataField="NoCuota" HeaderText="No Cuota" />
+                   <%-- <asp:BoundField DataField="Id" HeaderText="No Cuota" />--%>
                     <asp:BoundField DataField="Fecha" HeaderText="Fecha" />
                     <asp:BoundField DataField="Interes" HeaderText="Interes" />
                     <asp:BoundField DataField="Capital" HeaderText="Capital" />
@@ -183,7 +182,7 @@
 
              <!--Card footer end-->
          </div>
-    <%--</div>--%>
+    </div>
 
     <!--Report Modal-->
     <div class="modal fade" id="reportModal" role="dialog" runat="server">

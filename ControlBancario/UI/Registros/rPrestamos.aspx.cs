@@ -23,7 +23,7 @@ namespace ControlBancario.UI.Registros
                 PrestamoReportViewer.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
                 PrestamoReportViewer.Reset();
 
-                PrestamoReportViewer.LocalReport.ReportPath = Server.MapPath(@"~\Report\ReportePrestamos.rdlc");
+                PrestamoReportViewer.LocalReport.ReportPath = Server.MapPath(@"~\Reportes\ReportePrestamos.rdlc");
 
                 LlenarDropdownList();
                 ViewState.Add("Detalle", detalle);
@@ -49,9 +49,11 @@ namespace ControlBancario.UI.Registros
         public void LlenarCampos(Prestamos prestamos)
         {
             //LimpiarCampos();
+            
             PrestamosIdTextBox.Text = prestamos.PrestamosId.ToString();
             FechaTextBox.Text = prestamos.Fecha.ToString("yyy-MM-dd");
-            CuentaDropDownList.Text = Convert.ToString(prestamos.CuentaId);
+            CuentaDropDownList.SelectedValue = prestamos.CuentaId.ToString();
+            //CuentaDropDownList.Text= Convert.ToString(prestamos.CuentaId);
             CapitalTextBox.Text = prestamos.Capital.ToString();
             InteresTextBox.Text = prestamos.Interes.ToString();
             TiempoTextBox.Text = prestamos.Tiempo.ToString();
@@ -92,6 +94,7 @@ namespace ControlBancario.UI.Registros
             TotalTextBox.Text = string.Empty;
             CuotaGridView.DataSource = null;
             CuotaGridView.DataBind();
+            SeBusco = false;
             ViewState["SeBusco"] = SeBusco;
           
 
@@ -124,11 +127,13 @@ namespace ControlBancario.UI.Registros
             {
                 Cuotas c = new Cuotas();
                 c.Id = ToInt(PrestamosIdTextBox.Text);
-                c.NoCuotas = i;
+               // c.NoCuotas = i;
                 c.Interes = decimal.Round(capital * (tasa / 12), 2);
                 c.Capital = decimal.Round(cuota - c.Interes, 2);
                 c.MontoPorCuota = decimal.Round(cuota, 2);
                 c.Balance = decimal.Round(capital - c.Capital, 2);
+                capital = c.Balance;
+                c.NoCuotas = i;
 
                 totalc += c.Capital;
                 totalI += c.Interes;
@@ -140,6 +145,7 @@ namespace ControlBancario.UI.Registros
             CuotaGridView.DataBind();
             ViewState["Detalle"] = detalle;
             TotalTextBox.Text = totalc.ToString();
+            
         }
 
         protected void NuevoLinkButton_Click(object sender, EventArgs e)
