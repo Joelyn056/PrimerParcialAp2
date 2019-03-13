@@ -25,7 +25,7 @@ namespace ControlBancario.UI.Registros
 
                 PrestamoReportViewer.LocalReport.ReportPath = Server.MapPath(@"~\Report\ReportePrestamos.rdlc");
 
-                LlenarDropDownList();
+                LlenarDropdownList();
                 ViewState.Add("Detalle", detalle);
                 ViewState.Add("SeBusco", SeBusco);
 
@@ -48,7 +48,7 @@ namespace ControlBancario.UI.Registros
 
         public void LlenarCampos(Prestamos prestamos)
         {
-            LimpiarCampos();
+            //LimpiarCampos();
             PrestamosIdTextBox.Text = prestamos.PrestamosId.ToString();
             FechaTextBox.Text = prestamos.Fecha.ToString("yyy-MM-dd");
             CuentaDropDownList.Text = Convert.ToString(prestamos.CuentaId);
@@ -97,8 +97,7 @@ namespace ControlBancario.UI.Registros
 
         }
 
-
-        private void LlenarDropDownList()
+        private void LlenarDropdownList()
         {
             Repositorio<Cuentas> rep = new Repositorio<Cuentas>();
             CuentaDropDownList.DataSource = rep.GetList(x => true);
@@ -106,9 +105,9 @@ namespace ControlBancario.UI.Registros
             CuentaDropDownList.DataTextField = "Nombre";
             CuentaDropDownList.DataBind();
             CuentaDropDownList.Items.Insert(0, new ListItem("", ""));
-
-            
         }
+
+
 
 
         protected void CalcularLinkButton_Click(object sender, EventArgs e)
@@ -134,9 +133,7 @@ namespace ControlBancario.UI.Registros
                 totalc += c.Capital;
                 totalI += c.Interes;
 
-                detalle.Add(c);
-
-               
+                detalle.Add(c);               
             }
 
             CuotaGridView.DataSource = detalle.ToList();

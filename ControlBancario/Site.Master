@@ -31,12 +31,14 @@
         }
     </script>
 
+    <meta http-equiv="author" content="Joelyn de la rosa">
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:ScriptManager runat="server" ></asp:ScriptManager>
         <!--Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">

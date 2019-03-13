@@ -8,6 +8,7 @@ using Entidades;
 using BLL;
 using System.Linq.Expressions;
 using ControlBancario.App_Code;
+using ControlBancario.Reportes;
 
 namespace ControlBancario.UI.Consultas
 {

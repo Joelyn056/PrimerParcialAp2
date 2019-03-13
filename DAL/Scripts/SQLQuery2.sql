@@ -30,7 +30,8 @@ create table Prestamos
 	CuentaId int not null,
 	Capital money,
 	Interes float,
-	Tiempo int
+	Tiempo int,
+	Total float
 );
 
 create table Cuotas
