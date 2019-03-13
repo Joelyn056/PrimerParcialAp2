@@ -75,7 +75,7 @@ namespace ControlBancario.UI.Registros
             prestamos.Capital = ToInt2(CapitalTextBox.Text);
             prestamos.Interes = ToInt2(InteresTextBox.Text);
             prestamos.Tiempo = ToInt2(TiempoTextBox.Text);
-            prestamos.Total = ToInt2(TotalTextBox.Text);
+            prestamos.Total = ToDecimal(TotalTextBox.Text);
             prestamos.Detalle = detalle;
 
 
@@ -120,31 +120,33 @@ namespace ControlBancario.UI.Registros
             decimal tasa = (ToDecimal(InteresTextBox.Text) / 100);
             decimal cuota = ToDecimal(CapitalTextBox.Text) * (tasa/ 12) / (decimal)(1 - Math.Pow((double)(1 + (tasa / 12)), -tiempo));
             decimal capital = ToDecimal(CapitalTextBox.Text);
-            decimal totalc = 0, totalI = 0;
-
-
-            for(int i = 1; i <= ToInt(TiempoTextBox.Text); ++i)
+            decimal totalc = 0, totalI = 0, total= 0;
+            decimal interes = decimal.Round(capital * (tasa) / tiempo);
+            total = (capital + (capital * tasa));
+            for (int i = 1; i <= tiempo; ++i)
             {
                 Cuotas c = new Cuotas();
                 c.Id = ToInt(PrestamosIdTextBox.Text);
-               // c.NoCuotas = i;
-                c.Interes = decimal.Round(capital * (tasa / 12), 2);
+                // c.NoCuotas = i;
+                //c.Interes = decimal.Round(capital * (tasa / 12), 2);
+                c.Interes = interes;
                 c.Capital = decimal.Round(cuota - c.Interes, 2);
                 c.MontoPorCuota = decimal.Round(cuota, 2);
                 c.Balance = decimal.Round(capital - c.Capital, 2);
                 capital = c.Balance;
                 c.NoCuotas = i;
 
-                totalc += c.Capital;
-                totalI += c.Interes;
-
+                //totalc += c.Capital;
+                //totalI += c.Interes;
+            
                 detalle.Add(c);               
             }
+            
 
             CuotaGridView.DataSource = detalle.ToList();
             CuotaGridView.DataBind();
             ViewState["Detalle"] = detalle;
-            TotalTextBox.Text = totalc.ToString();
+            TotalTextBox.Text = total.ToString();
             
         }
 

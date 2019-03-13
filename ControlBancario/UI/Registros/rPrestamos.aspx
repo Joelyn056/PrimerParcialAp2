@@ -131,7 +131,7 @@
 
     <div class="form-group row justify-content-center">
         <div class="col-lg-2 mr-2">
-            <asp:TextBox ID="TotalTextBox" CssClass="form-control" Visible="false" ReadOnly="true" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TotalTextBox" CssClass="form-control" Visible="true" ReadOnly="true" runat="server"></asp:TextBox>
         </div>
         </div>
        <%-- <div class="col-lg-2 mr-3">
