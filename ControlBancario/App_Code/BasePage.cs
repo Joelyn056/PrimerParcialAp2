@@ -10,6 +10,14 @@ namespace ControlBancario.App_Code
 {
     public class BasePage : Page
     {
+        public static int ToInt2(string valor)
+        {
+            int retorno = 0;
+            int.TryParse(valor, out retorno);
+
+            return retorno;
+        }
+
         public int ToInt(string text)
         {
             return (string.IsNullOrWhiteSpace(text)) ? 0 : int.Parse(text);

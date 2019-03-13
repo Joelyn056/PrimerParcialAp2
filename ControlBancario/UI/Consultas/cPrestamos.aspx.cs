@@ -15,6 +15,7 @@ namespace ControlBancario.UI.Consultas
     public partial class cPrestamos : BasePage
     {
         Expression<Func<Prestamos, bool>> filter = x => true;
+        public static List<Prestamos> lista = new List<Prestamos>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -38,7 +39,7 @@ namespace ControlBancario.UI.Consultas
             switch (FiltroDropDownList.SelectedIndex)
             {
                 case 0: //Todo
-                    filter = x => true;
+                     filter = x => true;                    
                     break;
 
                 case 1://PrestamosId
@@ -81,7 +82,8 @@ namespace ControlBancario.UI.Consultas
         {
             ReporsitorioPrestamos rep = new ReporsitorioPrestamos();
             Filtrar();
-            PrestamoGridView.DataSource = rep.GetList(filter);
+            lista = rep.GetList(filter);
+            PrestamoGridView.DataSource = lista;
             PrestamoGridView.DataBind();
         }
 

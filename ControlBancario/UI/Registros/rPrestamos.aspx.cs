@@ -69,13 +69,13 @@ namespace ControlBancario.UI.Registros
 
             Prestamos prestamos = new Prestamos();
 
-            prestamos.PrestamosId = ToInt(PrestamosIdTextBox.Text);
+            //prestamos.PrestamosId = ToInt(PrestamosIdTextBox.Text);
             prestamos.Fecha = DateTime.Parse(FechaTextBox.Text);
-            prestamos.CuentaId = ToInt(CuentaDropDownList.Text);
-            prestamos.Capital = ToInt(CapitalTextBox.Text);
-            prestamos.Interes = ToInt(InteresTextBox.Text);
-            prestamos.Tiempo = ToInt(TiempoTextBox.Text);
-            prestamos.Total = ToInt(TotalTextBox.Text);
+            prestamos.CuentaId = ToInt2(CuentaDropDownList.Text);
+            prestamos.Capital = ToInt2(CapitalTextBox.Text);
+            prestamos.Interes = ToInt2(InteresTextBox.Text);
+            prestamos.Tiempo = ToInt2(TiempoTextBox.Text);
+            prestamos.Total = ToInt2(TotalTextBox.Text);
             prestamos.Detalle = detalle;
 
 
@@ -161,7 +161,9 @@ namespace ControlBancario.UI.Registros
                 {
                     ReporsitorioPrestamos rep = new ReporsitorioPrestamos();
 
-                    if (ToInt(PrestamosIdTextBox.Text) == 0)
+                    Prestamos prestamo = rep.Buscar(ToInt2(PrestamosIdTextBox.Text));
+
+                    if ( prestamo == null )
                     {
                         if(rep.Guardar(LlenaClase()))
                         {
@@ -215,7 +217,7 @@ namespace ControlBancario.UI.Registros
                 int id = ToInt(PrestamosIdTextBox.Text);
                 PrestamoReportViewer.LocalReport.DataSources.Add(
                     new Microsoft.Reporting.WebForms.ReportDataSource(
-                        "Prestamo",
+                        "Prestamos",
                         new Repositorio<Prestamos>().GetList(x => x.PrestamosId == id)));
 
                 PrestamoReportViewer.LocalReport.DataSources.Add(
@@ -243,6 +245,13 @@ namespace ControlBancario.UI.Registros
             }
             else
                 CallModal("Este Prestamo no Existe");
+        }
+
+        protected void CuotaGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            CuotaGridView.DataSource = (List<Cuotas>)ViewState["Detalle"];
+            CuotaGridView.PageIndex = e.NewPageIndex;
+            CuotaGridView.DataBind();
         }
     }
 }

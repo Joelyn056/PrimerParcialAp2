@@ -31,7 +31,7 @@
                 <asp:Label ID="Label4" CssClass="col-lg-2 col-form-label" Text="PrestamoId" runat="server">PrestamoId:</asp:Label>
                 <div class="col-lg-4">
 
-                    <asp:TextBox ID="PrestamosIdTextBox" CssClass="form-control" TextMode="Number" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="PrestamosIdTextBox" CssClass="form-control" placeholder="0" TextMode="Number" runat="server"></asp:TextBox>
                 </div>
                 <div class="col-lg-1">
                     <asp:LinkButton ID="BuscarLinkButton" CssClass="btn btn-secondary" runat="server" CausesValidation="False" OnClick="BuscarLinkButton_Click">
@@ -117,7 +117,7 @@
     <!--Grid-->
     <div class="row justify-content-center mt-3">
         <div class="col-lg-11">
-            <asp:GridView ID="CuotaGridView" runat="server" AllowPaging="true" PageSize="7" CssClass="table table-striped table-hover table-responsive-lg" AutoGenerateColumns="False">
+            <asp:GridView ID="CuotaGridView" runat="server" AllowPaging="true" OnPageIndexChanging="CuotaGridView_PageIndexChanging" PageSize="7" CssClass="table table-striped table-hover table-responsive-lg" AutoGenerateColumns="False">
                 <Columns>
                    <%-- <asp:BoundField DataField="Id" HeaderText="No Cuota" />--%>
                     <asp:BoundField DataField="Fecha" HeaderText="Fecha" />
