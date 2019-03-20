@@ -105,6 +105,7 @@
             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate="TiempoTextBox" Text="*" Display="Dynamic" runat="server" ErrorMessage="Debe ingresar el tiempo de pago"></asp:RequiredFieldValidator>
             <asp:RangeValidator ID="RangeValidator4" ControlToValidate="TiempoTextBox" runat="server" Display="Dynamic" Text="*" ErrorMessage="El tiempo no es valido" Type="Integer" MinimumValue="0" MaximumValue="999999"></asp:RangeValidator>
         </div>
+        <!--Boton Calcular-->
         <div class="w-100"></div>
         <div class="col-lg-1">
             <asp:LinkButton ID="CalcularLinkButton" CssClass="btn btn-primary" Text="text" runat="server" CausesValidation="true" OnClick="CalcularLinkButton_Click">
@@ -128,7 +129,7 @@
             </asp:GridView>
         </div>
     </div>
-
+            <!-- Total-->
     <div class="form-group row justify-content-center">
         <div class="col-lg-2 mr-2">
             <asp:TextBox ID="TotalTextBox" CssClass="form-control" Visible="true" ReadOnly="true" runat="server"></asp:TextBox>

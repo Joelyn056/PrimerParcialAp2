@@ -5,6 +5,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="card">
+         <!--Card Header-->
         <div class="card-header text-center text-white bg-success">
             <h3>Registro de Depositos</h3>
         </div>
@@ -13,7 +14,7 @@
         <div class="card-body">
             <!--Id-->
             <div class="form-group row justify-content-center">
-                <asp:Label ID="Label1" CssClass="col-form-label" Text="DepositoId" runat="server">DepositoId:</asp:Label>
+                <asp:Label ID="Label1" CssClass="col-lg-2 col-form-label" Text="DepositoId" runat="server">DepositoId:</asp:Label>
                 <div class="col-lg-4">
                     <asp:TextBox ID="IdTextBox" CssClass="form-control" TextMode="Number" runat="server"></asp:TextBox>
                 </div>
@@ -27,7 +28,7 @@
 
             <!--CuentaId-->
             <div class="form-group row justify-content-center">
-                <asp:Label ID="Label5" CssClass="col-form-label" Text="Cuentas" runat="server">Cuenta:</asp:Label>
+                <asp:Label ID="Label5" CssClass="col-lg-2 col-form-label" Text="Cuentas" runat="server">Cuenta:</asp:Label>
                 <div class="col-lg-4">
                     <asp:DropDownList ID="CuentaDropDownList" CssClass="form-control" runat="server">
                         <asp:ListItem></asp:ListItem>
@@ -40,7 +41,7 @@
 
             <!--Fecha-->
             <div class="form-group row justify-content-center">
-                <asp:Label ID="Label2" CssClass="col-form-label" Text="Fecha" runat="server">Fecha:</asp:Label>
+                <asp:Label ID="Label2" CssClass="col-lg-2 col-form-label" Text="Fecha" runat="server">Fecha:</asp:Label>
                 <div class="col-lg-4">
                     <asp:TextBox ID="FechaTextBox" CssClass="form-control" TextMode="Date" runat="server"></asp:TextBox>
                 </div>
@@ -50,7 +51,7 @@
 
             <!--Concepto-->
             <div class="form-group row justify-content-center">
-                <asp:Label ID="Label4" CssClass="col-form-label" Text="Concepto" runat="server">Concepto:</asp:Label>
+                <asp:Label ID="Label4" CssClass="col-lg-2 col-form-label" Text="Concepto" runat="server">Concepto:</asp:Label>
                 <div class="col-lg-4">
                     <asp:TextBox ID="ConceptoTextBox" CssClass="form-control" runat="server"></asp:TextBox>
                 </div>
@@ -61,7 +62,7 @@
 
             <!--Monto-->
             <div class="form-group row justify-content-center">
-                <asp:Label ID="Label6" CssClass="col-form-label" Text="Monto" runat="server">Monto:</asp:Label>
+                <asp:Label ID="Label6" CssClass="col-lg-2 col-form-label" Text="Monto" runat="server">Monto:</asp:Label>
                 <div class="col-lg-4">
                     <asp:TextBox ID="MontoTextBox" TextMode="Number" CssClass="form-control" runat="server"></asp:TextBox>
                 </div>
@@ -77,7 +78,7 @@
             <!--Botones-->
             <div class="form-group row justify-content-center">
                 <div class="col-lg-1 mr-1">
-                    <asp:LinkButton ID="NuevoLinkButton" CssClass="btn btn-success" runat="server" CausesValidation="False" OnClick="NuevoLinkButton_Click">
+                    <asp:LinkButton ID="NuevoLinkButton" CssClass="btn btn-primary" runat="server" CausesValidation="False" OnClick="NuevoLinkButton_Click">
                         <span class="fas fa-plus"></span>
                         Nuevo
                     </asp:LinkButton>
@@ -89,7 +90,7 @@
                     </asp:LinkButton>
                 </div>
                 <div class="col-lg-1 mr-3">
-                    <asp:LinkButton ID="EliminarLinkButton" CssClass="btn btn-success" runat="server" CausesValidation="False" OnClick="EliminarLinkButton_Click">
+                    <asp:LinkButton ID="EliminarLinkButton" CssClass="btn btn-danger" runat="server" CausesValidation="False" OnClick="EliminarLinkButton_Click">
                         <span class="fa fa-trash-alt"></span>
                         Eliminar
 

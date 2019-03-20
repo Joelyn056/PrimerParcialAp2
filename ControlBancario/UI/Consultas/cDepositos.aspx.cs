@@ -15,6 +15,7 @@ namespace ControlBancario.UI.Consultas
     public partial class cDepositos : BasePage
     {
         Expression<Func<Depositos, bool>> filter = x => true;
+        public static List<Depositos> lista = new List<Depositos>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -85,7 +86,12 @@ namespace ControlBancario.UI.Consultas
 
         protected void ButtonImprimir_Click(object sender, EventArgs e)
         {
-            Response.Redirect(@"~/Reportes/ListadoDeDepositos.aspx");
+            //Response.Redirect(@"~/Reportes/ReporteDepositos.aspx");
+        }
+
+        protected void ButtonImprimir_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect(@"~/Reportes/ReporteDepositos.aspx");
         }
     }
 }

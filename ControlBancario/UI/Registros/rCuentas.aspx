@@ -65,7 +65,7 @@
             <!--Botones-->
             <div class="form-group row justify-content-center">
                 <div class="col-lg-1 mr-1"">
-                    <asp:LinkButton ID="NuevoLinkButton" CssClass="btn btn-success" runat="server" CausesValidation="False" OnClick="NuevoLinkButton_Click">
+                    <asp:LinkButton ID="NuevoLinkButton" CssClass="btn btn-primary" runat="server" CausesValidation="False" OnClick="NuevoLinkButton_Click">
                         <span class="fas fa-plus"></span>
                         Nuevo
                     </asp:LinkButton>
@@ -77,7 +77,7 @@
                     </asp:LinkButton>
                 </div>
                 <div class="col-lg-1 mr-3">
-                    <asp:LinkButton ID="EliminarLinkButton" CssClass="btn btn-success" runat="server" CausesValidation="False" OnClick="EliminarLinkButton_Click">
+                    <asp:LinkButton ID="EliminarLinkButton" CssClass="btn btn-danger" runat="server" CausesValidation="False" OnClick="EliminarLinkButton_Click">
                         <span class="fa fa-trash-alt"></span>
                         Eliminar
                     </asp:LinkButton>

@@ -66,15 +66,15 @@
                 </div>
             </div>
 
-             <div class="panel">
+             <%--<div class="panel">
                 <div class="text-center">
                     <div class="form-group">                       
-                        <asp:Button ID="ButtonImprimir" class=" btn btn-warning" runat="server"  Text="Imprimir Reporte"/>
+                        <asp:Button ID="ButtonImprimir" class=" btn btn-warning" runat="server"  Text="Imprimir Reporte"/>--%>
                     <%--<span class="fas fa-print"></span>--%>
-                     </div>
-                </div>
+                  <%--   </div>
+                </div>--%>
 
-            </div>
+            <%--</div>--%>
 
             <!--Card body end-->
         </div>
