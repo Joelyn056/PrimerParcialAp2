@@ -22,12 +22,12 @@ namespace ControlBancario.Reportes {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// PrestamoReportViewer control.
+        /// PrestamosReportViewer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.Reporting.WebForms.ReportViewer PrestamoReportViewer;
+        protected global::Microsoft.Reporting.WebForms.ReportViewer PrestamosReportViewer;
     }
 }

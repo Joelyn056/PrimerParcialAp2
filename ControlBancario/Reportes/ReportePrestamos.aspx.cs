@@ -15,12 +15,13 @@ namespace ControlBancario.Reportes
         {
             if(!IsPostBack)
             {
-                PrestamoReportViewer.ProcessingMode = ProcessingMode.Local;
-                PrestamoReportViewer.Reset();
-                PrestamoReportViewer.LocalReport.ReportPath = Server.MapPath(@"~\Reportes\ReportePrestamos.rdlc");
-                PrestamoReportViewer.LocalReport.DataSources.Clear();
-                PrestamoReportViewer.LocalReport.DataSources.Add(new ReportDataSource("Prestamos", cPrestamos.lista ));
-                PrestamoReportViewer.LocalReport.Refresh();
+                PrestamosReportViewer.ProcessingMode = ProcessingMode.Local;
+                PrestamosReportViewer.Reset();
+                PrestamosReportViewer.LocalReport.ReportPath = Server.MapPath(@"~\Reportes\ReportePrestamos.rdlc");
+                PrestamosReportViewer.LocalReport.DataSources.Clear();
+                PrestamosReportViewer.LocalReport.DataSources.Add(new ReportDataSource("Prestamos", cPrestamos.lista ));
+                PrestamosReportViewer.LocalReport.Refresh();
+                
             }
         }
     }

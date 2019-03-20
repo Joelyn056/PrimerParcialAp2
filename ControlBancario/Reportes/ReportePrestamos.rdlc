@@ -6,27 +6,30 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.69976cm</Width>
+              <Width>3.68685cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.69976cm</Width>
+              <Width>3.68685cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.69976cm</Width>
+              <Width>3.68685cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.69976cm</Width>
+              <Width>3.68685cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.69976cm</Width>
+              <Width>3.61147cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.69976cm</Width>
+              <Width>3.68685cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.68685cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.97041cm</Height>
+              <Height>1.24823cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -242,7 +245,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Tiempo</Value>
+                              <Value>Tiempo </Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -274,10 +277,51 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox13">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Total</Value>
+                              <Style>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>#666666</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox13</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <BottomBorder>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <BackgroundColor>White</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.97041cm</Height>
+              <Height>1.24823cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -288,7 +332,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!PrestamosId.Value)</Value>
+                              <Value>=Fields!PrestamosId.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
@@ -358,7 +402,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!CuentaId.Value)</Value>
+                              <Value>=Fields!CuentaId.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
@@ -393,7 +437,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!Capital.Value)</Value>
+                              <Value>=Fields!Capital.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
@@ -428,7 +472,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!Interes.Value)</Value>
+                              <Value>=Fields!Interes.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
@@ -463,7 +507,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!Tiempo.Value)</Value>
+                              <Value>=Fields!Tiempo.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
@@ -489,12 +533,48 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Total">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Total.Value</Value>
+                              <Style>
+                                <FontWeight>Normal</FontWeight>
+                                <Color>#333333</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Total</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <BackgroundColor>White</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
               </TablixCells>
             </TablixRow>
           </TablixRows>
         </TablixBody>
         <TablixColumnHierarchy>
           <TablixMembers>
+            <TablixMember />
             <TablixMember />
             <TablixMember />
             <TablixMember />
@@ -514,82 +594,16 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Prestamos</DataSetName>
-        <Top>7.18881cm</Top>
-        <Height>1.94082cm</Height>
-        <Width>22.19854cm</Width>
+        <Top>4.84188cm</Top>
+        <Height>2.49646cm</Height>
+        <Width>25.73254cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
-      <Image Name="Image2">
-        <Source>Embedded</Source>
-        <Value>plantillalogotipodinerobilletes_232147891295</Value>
-        <Sizing>FitProportional</Sizing>
-        <Top>0.78106cm</Top>
-        <Left>5.0202cm</Left>
-        <Height>4.46333cm</Height>
-        <Width>4.75437cm</Width>
-        <ZIndex>1</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-        </Style>
-      </Image>
-      <Textbox Name="Language">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Label>Control Bancario</Label>
-                <Value>Control Bancario</Value>
-                <Style>
-                  <FontSize>16pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Urb. El Silencio C/L #14 SFM
-</Value>
-                <Style>
-                  <FontSize>16pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Language</rd:DefaultName>
-        <Top>2.13995cm</Top>
-        <Left>7.71453cm</Left>
-        <Height>2.77cm</Height>
-        <Width>8.87676cm</Width>
-        <ZIndex>2</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="ReportName">
+      <Textbox Name="Textbox15">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
@@ -606,11 +620,84 @@
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>ReportName</rd:DefaultName>
-        <Top>5.42078cm</Top>
-        <Left>7.39951cm</Left>
-        <Height>0.94396cm</Height>
-        <Width>9.82896cm</Width>
+        <rd:DefaultName>Textbox15</rd:DefaultName>
+        <Top>3.14537cm</Top>
+        <Left>6.45899cm</Left>
+        <Height>1.84354cm</Height>
+        <Width>11.86282cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image2">
+        <Source>Embedded</Source>
+        <Value>plantillalogotipodinerobilletes_232147891295</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>0.34078cm</Top>
+        <Left>6.45899cm</Left>
+        <Height>3.45792cm</Height>
+        <Width>4.80729cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox16">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Control Bancario</Value>
+                <Style>
+                  <FontSize>16pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>      Urb. El Silencio C/L # 14</Value>
+                <Style>
+                  <FontSize>16pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>S.F.M</Value>
+                <Style>
+                  <FontSize>16pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox16</rd:DefaultName>
+        <Top>1.37266cm</Top>
+        <Left>9.68848cm</Left>
+        <Height>2.69021cm</Height>
+        <Width>7.42304cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -623,10 +710,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>5in</Height>
+    <Height>4.77083in</Height>
     <Style />
   </Body>
-  <Width>8.73958in</Width>
+  <Width>10.13092in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
@@ -639,18 +726,18 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="PrestamosDataSet">
+    <DataSource Name="PrimerParcialApIIDbDataSet">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>15125b0e-a158-431e-9b37-b1a3d12883ed</rd:DataSourceID>
+      <rd:DataSourceID>7709c11f-35be-4340-a652-80141590d041</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="Prestamos">
       <Query>
-        <DataSourceName>PrestamosDataSet</DataSourceName>
+        <DataSourceName>PrimerParcialApIIDbDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -672,16 +759,20 @@
         </Field>
         <Field Name="Interes">
           <DataField>Interes</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.Single</rd:TypeName>
         </Field>
         <Field Name="Tiempo">
           <DataField>Tiempo</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="Total">
+          <DataField>Total</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>PrestamosDataSet</rd:DataSetName>
-        <rd:SchemaPath>E:\UCNE\Aplicada II\Primer Parcial\ControlBancario\ControlBancario\PrestamosDataSet.xsd</rd:SchemaPath>
+        <rd:DataSetName>PrimerParcialApIIDbDataSet</rd:DataSetName>
+        <rd:SchemaPath>E:\UCNE\Aplicada II\Primer Parcial\ControlBancario\ControlBancario\PrimerParcialApIIDbDataSet.xsd</rd:SchemaPath>
         <rd:TableName>Prestamos</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -785,5 +876,5 @@ jDZNtASRNuoQOmsztkx7Vytoi65rvjXBW4jdd79pdhiLDUtenE4pFyxXLIZi5ChCRETCuPBvGBkQLC+P
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>5d067c5c-5165-4c0c-b17b-2f7e232c7d60</rd:ReportID>
+  <rd:ReportID>a36b264b-4337-417d-bf4f-fa11a77668af</rd:ReportID>
 </Report>

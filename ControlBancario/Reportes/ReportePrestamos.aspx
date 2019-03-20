@@ -18,7 +18,7 @@
            <%---ScriptManager---%>
             <asp:ScriptManager runat="server"></asp:ScriptManager>
 
-            <rsweb:ReportViewer ID="PrestamoReportViewer" runat="server"  Height="800px" Width="1000px" ProcessingMode="Remote">
+            <rsweb:ReportViewer ID="PrestamosReportViewer" runat="server"  Height="800px" Width="1000px" ProcessingMode="Remote">
                 <ServerReport ReportPath="" ReportServerUrl="" />
             </rsweb:ReportViewer>
         </div>

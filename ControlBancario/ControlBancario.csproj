@@ -131,11 +131,6 @@
     <Compile Include="App_Code\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CuentasDbDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CuentasDbDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -143,18 +138,8 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DepositosDbDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DepositosDbDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="PrestamosDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PrestamosDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="PrimerParcialApIIDbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -235,43 +220,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CuentasDbDataSet.xsc">
-      <DependentUpon>CuentasDbDataSet.xsd</DependentUpon>
-    </Content>
-    <None Include="CuentasDbDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CuentasDbDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="CuentasDbDataSet.xss">
-      <DependentUpon>CuentasDbDataSet.xsd</DependentUpon>
-    </Content>
-    <Content Include="DepositosDbDataSet.xsc">
-      <DependentUpon>DepositosDbDataSet.xsd</DependentUpon>
-    </Content>
-    <None Include="DepositosDbDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DepositosDbDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="DepositosDbDataSet.xss">
-      <DependentUpon>DepositosDbDataSet.xsd</DependentUpon>
-    </Content>
     <None Include="packages.config" />
     <Content Include="Site.Master" />
     <Content Include="PrimerParcialApIIDbDataSet.xsc">
       <DependentUpon>PrimerParcialApIIDbDataSet.xsd</DependentUpon>
-    </Content>
-    <Content Include="PrestamosDataSet.xsc">
-      <DependentUpon>PrestamosDataSet.xsd</DependentUpon>
-    </Content>
-    <None Include="PrestamosDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PrestamosDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="PrestamosDataSet.xss">
-      <DependentUpon>PrestamosDataSet.xsd</DependentUpon>
     </Content>
     <None Include="PrimerParcialApIIDbDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
